@@ -163,8 +163,7 @@ module Sidekiq
       end
 
       def set_program_name!
-        tag = SIDEKIQ_GTE_6_5_0 ? Sidekiq[:tag] : Sidekiq.options[:tag]
-        $PROGRAM_NAME = "sidekiq process manager #{tag} [#{@pids.size} processes]"
+        $PROGRAM_NAME = "sidekiq process manager [#{@pids.size} processes]"
       end
 
       def start_child_process!
